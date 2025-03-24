@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Запуск сервера",
+        "program": "${workspaceFolder}/src/app.js",
+        "env": {
+          "DB_USER": "postgres",
+          "DB_HOST": "localhost",
+          "DB_NAME": "habit_tracker",
+          "DB_PASSWORD": "375032",
+          "DB_PORT": "5433",
+        },
+        "skipFiles": [
+          "<node_internals>/**"
+        ]
+      }
+    ]
+  }
+  
