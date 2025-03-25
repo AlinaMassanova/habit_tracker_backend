@@ -5,6 +5,9 @@ const authRoutes = require('./routes/authRoutes');
 const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
+const userRoutes = require('./routes/userRoutes');
+const testRoutes = require('./routes/testRoutes');
+
 
 // Парсинг JSON и cookies
 app.use(express.json());
@@ -12,7 +15,8 @@ app.use(cookieParser());
 
 // Роуты
 app.use('/auth', authRoutes);
-
+app.use('/user', userRoutes);
+app.use('/', testRoutes);
 // Обработка ошибок
 app.use(errorHandler);
 

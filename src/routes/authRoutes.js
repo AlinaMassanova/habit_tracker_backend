@@ -1,13 +1,13 @@
 // 📁 src/routes/authRoutes.js
 const express = require('express');
-const AuthController = require('../controllers/AuthController');
+const { register, login } = require('../controllers/AuthController');
 
 const router = express.Router();
 
-router.post('/register', AuthController.register);
-router.post('/login', AuthController.login);
+// Маршрут для регистрации
+router.post('/register', register);
 
-router.get('/test', (req, res) => {
-  res.send('Сервер работает!');
-});
-module.exports = router;  
+// Маршрут для входа
+router.post('/login', login);
+
+module.exports = router;

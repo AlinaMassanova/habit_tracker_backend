@@ -1,4 +1,5 @@
 // 📁 src/models/TokenModel.js
+// 📁 src/models/TokenModel.js
 const db = require('../config/db');
 
 class TokenModel {
@@ -15,6 +16,12 @@ class TokenModel {
   static async findByUserId(userId) {
     const query = 'SELECT * FROM tokens WHERE user_id = $1;';
     return db.query(query, [userId]);
+  }
+
+  // Получение токена по значению токена
+  static async findByToken(token) {
+    const query = 'SELECT * FROM tokens WHERE token = $1;';
+    return db.query(query, [token]);
   }
 
   // Удаление токена
